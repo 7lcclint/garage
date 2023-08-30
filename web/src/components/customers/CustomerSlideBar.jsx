@@ -1,15 +1,13 @@
 import { useParams } from 'react-router-dom'
 import './CustomerSlideBar.css'
 import {Link} from 'react-router-dom'
-import { useNavigate } from "react-router-dom";
 
 function CustomerSlideBar() {
   const {activepage} = useParams();
-  const navigateTo = useNavigate();
-  
+
   const handleLogout = () => {
     window.localStorage.removeItem('isLoggedIn');
-    navigateTo('/login');
+    window.location.replace('/home');
   };
 
   return (
@@ -23,7 +21,7 @@ function CustomerSlideBar() {
         <span>บัญชีผู้ใช้</span>
       </div>
       :
-      <Link to='/user/accountsettings'
+      <Link  to='/user/accountsettings'
       className='stylenone'>
         <div className='section1'>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

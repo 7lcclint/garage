@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import CustomerSlideBar from "./CustomerSlideBar";
 import './CustomerProfile.css'
 import AccountSettings from "./AccountSettings";
+import Booktoservices from "./Booktoservices";
 
 function CustomerProfile() {
     const {activepage} = useParams();
@@ -13,6 +14,7 @@ function CustomerProfile() {
               </div>
               <div className="right">
                   {activepage === 'accountsettings' && <AccountSettings/>}
+                  {activepage === 'bookservice' && <Booktoservices/>}
               </div>
           </div>
         {/* CustomerProfile, showing {activepage} */}
